@@ -58,11 +58,14 @@ var snake = {
 	runs: 'legless'
 };
 
-// for (var key in snake){
-// 	if(key.conatains('s')){
-// 		snake[key] = 's';
-// 	}
-// }
+function snakeLooper(){
+	for (var key in snake){
+		if(key.substring(0) === 's'){
+			key = 's';
+		}
+	}
+	return snake;
+}
 
 //#7 Create an array of strings that are the 7 primary colors in the rainbow - red, orange, yellow, green, blue, indigo, violet (lower-case). Call your array rainbowColors
 var rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
@@ -87,21 +90,30 @@ thirdHero = heroes[1];
 // the array.
 function addItem(array,item){
 	array.push(item);
+	return array;
 }
 
 // #10 Write a function called removeItem that takes in an array of strings, and a string.
 // Removes all instances of that string from the array. And return the modified array.
 // The order of the array should not be changed
-// function removeItem(arr,str){
-// 	for(var i=0; i < arr.length; i++){
-// 		if()
-// 	}
-// };
+function removeItem(arr,str){
+	// str1 = str.toLowerCase();
+	for(var i=0; i < arr.length; i++){
+		if(arr[i] === str){
+			arr.splice(i,1);
+			i--;
+		}
+	}
+	return arr;
+}
 
 
 // #11 Write a function  called doubleTheFun that takes 1 parameter. It should double numbers, and
 // repeats strings. example 4->8, 2.5->5, 'Awesome'->'AwesomeAwesome'
 function doubleTheFun(par){
+	if(parseInt(par) === true){
+		par = parseInt(par).split();
+	}
 	return par+par;
 }
 
@@ -121,6 +133,12 @@ function getValueOfProperty(obj,propName){
 // the current time as a Date object
 function makeChatMessage(message, author){
 
+	var obj = {
+		'message': message,
+		'author': author,
+		'timestamp': new Date()
+	};
+	return obj;
 }
 
 
